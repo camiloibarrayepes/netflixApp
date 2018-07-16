@@ -32,17 +32,18 @@ class App extends Component {
 
 	render(){
 		return(
-			<View style={[{flex: 1}, styles.containter]}>
 				<SideMenu
 					menu={<Menu />}
 					isOpen={this.state.isOpen}
 					onChange={(isOpen) => this.updateMenu(isOpen)}
+					
 				>
-					<Header toggle={this.toggle.bind(this)}/>
-					<Slide />
-					<List />
+					<View style={[{flex: 1}, styles.containter]}>
+						<Header toggle={this.toggle.bind(this)}/>
+						<Slide />
+						<List />
+					</View>
 				</SideMenu>
-			</View>
 		)
 	}
 }
