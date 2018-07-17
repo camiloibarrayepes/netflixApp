@@ -45,7 +45,7 @@ class App extends Component {
 						<Header navigator={this.props.navigator} toggle={this.toggle.bind(this)}/>
 						<ScrollView>
 							<Slide />
-							<List />
+							<List navigator={this.props.navigator} />
 						</ScrollView>
 					</View>
 				

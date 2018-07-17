@@ -5,6 +5,7 @@ import {
 
 import App from './app'
 import Search from './components/Search'
+import Details from './components/Details'
 
 import buildStyleInterpolator from 'buildStyleInterpolator'
 
@@ -34,6 +35,10 @@ class IndexApp extends Component{
 				return(
 					<Search {...navigator}/>
 				)
+			case 'Details':
+				return(
+					<Details {...navigator} {...route.passProps}/>
+				)
 
 		}
 	}
@@ -41,6 +46,16 @@ class IndexApp extends Component{
 	_configureScene(route, routeStack){
 		switch(route.ident){
 			case 'Search':
+				return{
+					...Navigator.SceneConfigs.FloatFromLeft,
+					gestures: null,
+					defaultTransitionVelocity: 100,
+					animationInterpolators: {
+						into: buildStyleInterpolator(NoTransition),
+						out: buildStyleInterpolator(NoTransition)
+					}
+				}
+			case 'Details':
 				return{
 					...Navigator.SceneConfigs.FloatFromLeft,
 					gestures: null,
