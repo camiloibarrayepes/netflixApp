@@ -14,11 +14,11 @@ class IndexApp extends Component{
 		switch(route.ident){
 			case 'App':
 				return(
-					<App />
+					<App {...navigator}/>
 				)
 			case 'Search':
 				return(
-					<Search />
+					<Search {...navigator}/>
 				)
 
 		}
@@ -26,7 +26,7 @@ class IndexApp extends Component{
 	render(){
 		return(
 			<Navigator
-				initialRoute={{ident: 'Search'}}
+				initialRoute={{ident: 'App'}}
 				renderScene={this._renderScene}
 
 			/>

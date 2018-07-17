@@ -39,7 +39,7 @@ class App extends Component {
 					
 				>
 					<View style={[{flex: 1}, styles.containter]}>
-						<Header toggle={this.toggle.bind(this)}/>
+						<Header navigator={this.props.navigator} toggle={this.toggle.bind(this)}/>
 						<Slide />
 						<List />
 					</View>
