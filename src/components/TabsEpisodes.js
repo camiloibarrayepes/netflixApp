@@ -27,7 +27,7 @@ class TabsEpisodes extends Component{
 	_renderScene({route}){
 		switch(route.key){
 			case '1':
-				return <Episodes />
+				return <Episodes episodes={this.props.data} />
 			case '2':
 				return <Trailers />
 			default:
@@ -41,15 +41,16 @@ class TabsEpisodes extends Component{
 	render(){
 		return(
 			 <TabView
-	          navigationState={this.state}
-	          renderScene={this._renderScene}
-	          renderTabBar={this._renderHeader}
-	          onIndexChange={this._handleChangeTab.bind(this)}
-	          initialLayout={{
-	            width: Dimensions.get('window').width,
-	            height: Dimensions.get('window').height
-	          }}
-	          renderPager={this._renderPager}
+			 	style={styles.container}
+	        	navigationState={this.state}
+	          	renderScene={this._renderScene.bind(this)}
+	          	renderTabBar={this._renderHeader}
+	          	onIndexChange={this._handleChangeTab.bind(this)}
+	          	initialLayout={{
+	            	width: Dimensions.get('window').width,
+	            	height: Dimensions.get('window').height
+	          	}}
+	          	renderPager={this._renderPager}
 	        />
 		)
 	}
@@ -57,7 +58,9 @@ class TabsEpisodes extends Component{
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
+		borderTopWidth: 2,
+		borderColor: 'black'
 	},
 })
 

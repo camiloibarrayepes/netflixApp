@@ -21,6 +21,7 @@ const{width, height} = Dimensions.get('window')
 class Details extends Component{
 	render(){
 
+		const {episodes} = this.props.item.details
 		const {name} = this.props.item
 		const {thumbnail, cast, description, year, creator, numOfEpisodes, season} = this.props.item.details
 		return(
@@ -77,7 +78,7 @@ class Details extends Component{
 						</View>
 					</View>
 				</View>
-				<TabsEpisodes />
+				<TabsEpisodes data={episodes} />
 			</ScrollView>
 		)
 	}
