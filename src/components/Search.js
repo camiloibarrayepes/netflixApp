@@ -496,7 +496,7 @@ class Search extends Component{
 
 
 						
-						<TouchableWithoutFeedback style={styles.cancelButton}>
+						<TouchableWithoutFeedback style={styles.cancelButton} onPress={() => this.props.navigator.pop()}>
 							<View style={styles.containerButton}> 
 								<Text style={styles.cancelButtonText}>
 									Cancel

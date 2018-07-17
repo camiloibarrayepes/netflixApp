@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import{
 	Text,
 	View,
-	StyleSheet
+	StyleSheet,
+	ScrollView
 } from 'react-native'
 
 import SideMenu from 'react-native-side-menu'
@@ -32,18 +33,24 @@ class App extends Component {
 
 	render(){
 		return(
+			
 				<SideMenu
 					menu={<Menu />}
 					isOpen={this.state.isOpen}
 					onChange={(isOpen) => this.updateMenu(isOpen)}
 					
 				>
+				
 					<View style={[{flex: 1}, styles.containter]}>
 						<Header navigator={this.props.navigator} toggle={this.toggle.bind(this)}/>
-						<Slide />
-						<List />
+						<ScrollView>
+							<Slide />
+							<List />
+						</ScrollView>
 					</View>
+				
 				</SideMenu>
+
 		)
 	}
 }
