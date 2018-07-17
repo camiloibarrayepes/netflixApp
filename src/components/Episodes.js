@@ -24,7 +24,7 @@ class Episodes extends Component{
 							source={{uri: img}}>
 							<View style={styles.buttonPlay}>
 								<TouchableWithoutFeedback>
-									<View>
+									<View style={{backgroundColor: 'transparent'}}>
 										<Icon
 											style={styles.iconPlay}
 											name="play-circle"
@@ -36,8 +36,8 @@ class Episodes extends Component{
 							</View>
 						</ImageBackground>
 						<View style={styles.episodeName}> 
-							<Text>{item.number}. {item.name}</Text>
-							<Text>{item.runtime}</Text>
+							<Text style={styles.text}>{item.number}. {item.name}</Text>
+							<Text style={styles.text}>{item.runtime}</Text>
 						</View>
 					</View>
 					<Text style={styles.summary}>{item.summary}</Text>
@@ -56,9 +56,32 @@ class Episodes extends Component{
 }
 
 const styles = StyleSheet.create({
+	container:{
+		marginHorizontal: 10
+	},
 	image:{
 		width: 150,
-		height: 80
+		height: 80,
+		marginRight: 10
+	},
+	buttonPlay:{
+		justifyContent: 'center',
+		alignItems: 'center',
+		flex: 1
+	},
+	episodeName:{
+		justifyContent: 'center'
+	},
+	videoEpisode:{
+		flexDirection: 'row'
+
+	},
+	text:{
+		color: 'white'
+	},
+	summary:{
+		color: 'grey',
+		marginVertical: 10
 	}
 })
 
