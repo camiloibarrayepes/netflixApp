@@ -39,7 +39,6 @@ class IndexApp extends Component{
 				return(
 					<Details {...navigator} {...route.passProps}/>
 				)
-
 		}
 	}
 
